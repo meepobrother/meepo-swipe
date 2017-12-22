@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy,ChangeDetectorRef } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,6 +7,16 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'app';
-  constructor() {}
-  ngOnInit(){}
+  items: any[] = [];
+  constructor(
+    public cd: ChangeDetectorRef
+  ) { }
+  ngOnInit() {
+    this.items = [{ title: '1' }, { title: '2' }, { title: '3' }];
+
+    setTimeout(() => {
+      this.items.push({ title: '4' });
+      this.cd.markForCheck();
+    }, 1000);
+  }
 }

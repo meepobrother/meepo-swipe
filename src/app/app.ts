@@ -1,13 +1,28 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { VersionnComponent } from './version';
-
+import { SwipeComponent } from './swipe/swipe';
+import { SwipeItemDirective } from './swipe/swipe-item';
+import { IsEndDirective } from './isend';
+import { LoaderService } from './loader';
 @NgModule({
     declarations: [
-        VersionnComponent
+        SwipeComponent,
+        SwipeItemDirective,
+        IsEndDirective
     ],
     imports: [ CommonModule ],
-    exports: [],
-    providers: [],
+    exports: [
+        SwipeComponent,
+        SwipeItemDirective
+    ]
 })
-export class AppModule {}
+export class SwipeModule {
+    public static forRoot(): ModuleWithProviders{
+        return {
+            ngModule: SwipeModule,
+            providers: [
+                LoaderService
+            ]
+        }
+    }
+}

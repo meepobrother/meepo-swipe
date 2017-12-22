@@ -1,1 +1,5 @@
-<h2 class="title">welcome to use imeepos template form angular!</h2>
+<swipe [items]="items">
+    <ng-template swipeItem let-item>
+        <div class="swipe-item">{{item.title}}</div>
+    </ng-template>
+</swipe>
