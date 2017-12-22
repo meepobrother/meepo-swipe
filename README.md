@@ -1,5 +1,7 @@
 # swipe for angular
 
+- [swipe 5kb for mini](https://github.com/thebird/Swipe/blob/master/swipe.js)
+
 ```ts
 import { SwipeModule } from 'meepo-swipe';
 @NgModule({
