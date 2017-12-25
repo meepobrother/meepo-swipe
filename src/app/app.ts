@@ -14,15 +14,9 @@ import { LoaderService } from './loader';
     exports: [
         SwipeComponent,
         SwipeItemDirective
+    ],
+    providers: [
+        LoaderService
     ]
 })
-export class SwipeModule {
-    public static forRoot(): ModuleWithProviders{
-        return {
-            ngModule: SwipeModule,
-            providers: [
-                LoaderService
-            ]
-        }
-    }
-}
+export class SwipeModule {}

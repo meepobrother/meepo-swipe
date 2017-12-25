@@ -8,7 +8,7 @@ import { SwipeModule } from '../../src/app/app';
   ],
   imports: [
     BrowserModule,
-    SwipeModule.forRoot()
+    SwipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
